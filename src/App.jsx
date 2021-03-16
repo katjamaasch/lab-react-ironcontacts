@@ -58,20 +58,16 @@ class App extends React.Component {
 
   handleDeletion = (id) => {
     // ----- Why is this working:
-    const clonedArray = this.state.people.filter(
+    const filteredArray = this.state.people.filter(
       (element) => element.id !== id
     );
-
-    // ----- ...but this isn't?:
-    // const clonedArray = this.state.people;
-    // clonedArray.filter(element => element.id !== id);
 
     // ---Alternative: ---
     // const index = clonedArray.findIndex((contact) => contact.id === id);
     // clonedArray.splice(index, 1);
     // console.log(index);
     this.setState({
-      people: clonedArray
+      people: filteredArray
     });
   };
 
